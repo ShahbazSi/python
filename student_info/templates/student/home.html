@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student infromations system</title>
+</head>
+<body>
+{% for detail in page_obj %}
+<h1>{{detail.student_name}}</h1>
+<h3>{{detail.Email}}</h3>
+<h4>{{detail.PhoneNo}}</h4>
+<h5>{detail.Class}}</h5>
+{% endfor %}
+<span>
+    {% if page_obj.has_previous %}
+    <a href="?page={{page_obj.previous_page_number}}">Previous</P></a>
+    {% endif %}
+    <span>{{page_obj.number}}</span>
+    {% if page_obj.has_next %}
+    <a href="?page={{page_obj.next_page_number}}">Next</P></a>
+    {% endif %}
+</span>
+</body>
+</html>
